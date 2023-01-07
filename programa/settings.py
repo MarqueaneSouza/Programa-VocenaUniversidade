@@ -75,10 +75,17 @@ WSGI_APPLICATION = 'programa.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pagina1', #nome do banco de dados criado - Aula 26.
+        'USER': 'postgres',
+        'PASSWORD': '201012',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        'OPTIONS': {
+                    'options': '-c search_path=pagina1_bd' #pagina1_db: nome do schema que eu quero acessa.
+                },
+     }
 }
 
 
